@@ -1,0 +1,115 @@
+{
+  "category": {
+    "label": "Loại bất động sản",
+    "defaul_item": "Nhà riêng",
+    "items": [
+      "Căn hộ chung cư",
+      "Nhà riêng",
+      "Nhà biệt thự",
+      "Nhà mặt phố",
+      "Khách sạn",
+      "Homestay",
+      "Đất"
+    ]
+  },
+  "city": {
+    "label": "Tỉnh, thành phố",
+    "defaul_item": "Lâm Đồng",
+    "items": ["Lâm Đồng"]
+  },
+  "district": {
+    "label": "Quận, huyện",
+    "defaul_item": "Đà Lạt",
+    "items": ["Đà Lạt"]
+  },
+  "ward": {
+    "label": "Phường, xã",
+    "defaul_item": "Phường 1",
+    "items": [
+        "Phường 1",
+        "Phường 2",
+        "Phường 3",
+        "Phường 4",
+        "Phường 5",
+        "Phường 6",
+        "Phường 7",
+        "Phường 8",
+        "Phường 9",
+        "Phường 10",
+        "Phường 11",
+        "Phường 12",
+        "Xã Tà Nung",
+        "Xã Trạm Hành",
+        "Xã Xuân Thọ",
+        "Xã Xuân Trường"
+      ]
+  },
+  "street_name": {
+    "label": "Đường, phố",
+    "prev_value": "",
+    "placeholder": "Nhập tên đường, VD: Quang Trung"
+  },
+  "building_line": {
+    "label": "Lộ giới",
+    "defaul_item": "Đường xe hơi",
+    "items": [
+      "Đường xe hơi",
+      "Đường xe máy"
+    ]
+  },
+  "acreage": {
+    "label": "Diện tích",
+    "prev_value": "",
+    "placeholder": "Nhập diện tích, VD: 80"
+  },
+  "construction": {
+    "label": "Kết cấu",
+    "prev_value": "1 trệt, ",
+    "placeholder": "Nhập kết cấu, VD: 1 hầm, 1 trệt, 1 lầu, 1 áp"
+  },
+  "function": {
+    "label": "Công năng",
+    "prev_value": "1PK, 1 bếp",
+    "placeholder": "Nhập công năng, VD: 1 PK, 1 bếp, 3PN, 3WC"
+  },
+  "fuiture": {
+    "label": "Nội thất",
+    "defaul_item": "Nội thất cơ bản",
+    "items": [
+      "Không nội thất",
+      "Nội thất cơ bản",
+      "Nội thất cao cấp "
+    ]
+  },
+  "legal": {
+    "label": "Giấy tờ pháp lý",
+    "defaul_item": "Sổ xây dựng phân quyền",
+    "items": [
+        "Sổ riêng xây dựng",
+        "Sổ riêng nông nghiệp",
+        "Sổ xây dựng phân quyền",
+        "Sổ nông nghiệp phân quyền",
+        "Vi bằng"
+      ]
+  },
+  "price": {
+    "label": "Mức giá",
+    "prev_value": "",
+    "placeholder": "Nhập giá, VD: 1.2 tỷ"
+  },
+  "contact": {
+    "label": "Liên hệ",
+    "prev_value": "0375155525 - Mr. Bình",
+    "placeholder": "0357155525 - Mr. Bình"
+  },
+  "description": {
+    "label": "Mô tả",
+    "prev_value": "",
+    "placeholder": ""
+  },
+  "source": {
+    "label": "Nguồn sản phẩm",
+    "prev_value": "",
+    "placeholder": "Nhập nguồn sản phẩm, VD: A.Khánh, C.Quý, Chính chủ, url facebook"
+  }
+}

@@ -1,0 +1,43 @@
+PATH_ROOT = 'py-product-manager'
+PATH_PRODUCTS = '\\py-product-manager\\bin\\data.json'
+PATH_PRODUCT_TEMPLATE = '\\py-product-manager\\assets\\product_template.json'
+PATH_DATA = '\\py-product-manager\\bin\\data.json'
+PATH_CURRENT_PRODUCT = '\\py-product-manager\\bin\\currentProduct.json'
+PATH_INFO_TEMPLATE = '\\py-product-manager\\assets\\info_template.json'
+PATH_PROFILE_CONFIG = '\\py-product-manager\\assets\\profileConfig.json'
+PATH_PRODUCT_TEMPLATE = '\\py-product-manager\\assets\\product_template.json'
+PATH_CREATE_CONFIG = '\\py-product-manager\\assets\\create_config.json'
+
+PATH_LOADING_ANIMATION = '\\py-product-manager\\assets\\animation\\loading.gif'
+PATH_EDIT_ICON = '\\py-product-manager\\assets\\icons\\edit.svg'
+PATH_REMOVE_ICON = '\\py-product-manager\\assets\\icons\\remove.svg'
+PATH_OPEN_ICON = '\\py-product-manager\\assets\\icons\\open.svg'
+PATH_WARNING_ICON = '\\py-product-manager\\assets\\icons\\warning.svg'
+PATH_ICON_PLUS = 'py-product-manager\\assets\\icons\\plus.svg'
+PATH_ICON_BOOKMARK = 'py-product-manager\\assets\\icons\\bookmark.svg'
+PATH_ICON_ROBOTCONTROL = 'py-product-manager\\assets\\icons\\bot.svg'
+PATH_ICON_CREATE = 'py-product-manager\\assets\\icons\\plus.svg'
+PATH_ICON_REFRESH = 'py-product-manager\\assets\\icons\\refresh.svg'
+PATH_ICON_AUTO = 'py-product-manager\\assets\\icons\\auto.svg'
+PATH_ICON_PRODUCT_TEMPLATE = 'py-product-manager\\assets\\icons\\bookmark.svg'
+PATH_ICON_ROBOTCONTROL = 'py-product-manager\\assets\\icons\\bot.svg'
+PATH_ICON_PROFILE = 'py-product-manager\\assets\\icons\\profile.svg'
+PATH_ICON_ITEM = 'py-product-manager\\assets\\icons\\item.svg'
+
+PATH_CHROME = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+PATH_CHROMEDRIVER = 'py-product-manager\\browser\\chromedriver.exe'
+PATH_FOLDER_OF_IMAGES = '\\py-product-manager\\bin\\images'
+PATH_PROFILES_BROWSER = 'py-product-manager\\browser\\chromeProfiles'
+PATH_MAIN_STYLE = '\\py-product-manager\\management\\UI\\main_window\\central\\styles.qss'
+PATH_DIALOG_STYLE = '\\py-product-manager\\management\\UI\\dialog\\style.qss'
+
+FOLDER_KEY = 'Folder Id'
+IMAGE_KEY = 'Image Id'
+HEADER = ['ID', 'Category', 'Ward', 'Street name', 'Acreage',  'Price', 'Legal', 'Building line']
+ICONS =  "😍😈👹👺😋👣♥️❤️💛💚❣️💟🎁⛑️👛️🎉️🎊️🎈️🥊🚵️🎖️️🏅️🥇️🥈️🥉️🏆🍎🍉🍓🍒🍑🌶🍅🍟🍭🍫🍷🐙🦑🦀🐞🦋🐾🐉🐲🌼🌸🌺🏵️🌻🌷🌹💐🌾🎋☘🍀🍃🍂🍁🌱🌿🎍🌵🌴🌳🌏⭐🌟✨⚡🔥💥☄️🌞☀️🌤️⛅🌈💧💦🚗🚕🚙🚌🚎🏎🚑🚒🚓🚐🚚🚛🚜🛴🚲🛵🏍🚘🚖🚍🚔🚨💺✈🛫🛬🛩🚁🚀🛰🚡🚠🚟🚃🚋🚞🚝🚄🚅🚈🚂🚆🕍🕌💒⛪🏟️🏯🏰🏛🏩🏨🏫🏦🏥🏣🏤🏬🏢🏚🏘🏡🏠🏭🏗🛤🛣🚥🚦🚏⛽🚧⚓🛳⛴🚢🚤🛥⛵🛶🚉🚇🚊🕋⛩🗼🗿🗽🗺🎪🎠🎡🎢⛲⛱🏖🏝🏕⛺🗾⛰🏔🗻🌋🏞🏜🌅🌄🎑🌠🎇🎆🏙🌇🌆🌃🌌🌉🌁⏰🎲🖲🕹🛏🎰💣🎀🎗️🎟️✉📩📨📧📦📪📫📬📭📮📥📤🔖📍📌❗❓‼️⁉️❌⭕💢🚫🛑⛔🔴📛🔰💠🔶🔷🔸🔹🔺🔻♦️♣️"
+TEXT_MOREPLACE = 'Niêm yết ở những nơi khác'
+MARKETPLACE = 'Marketplace'
+
+SCOPES = ['https://www.googleapis.com/auth/drive']
+PATH_TOKEN = '\\py-product-manager\\assets\\google\\token.json'
+PATH_CREDENTIALS = '\\py-product-manager\\assets\\google\\credentials.json'

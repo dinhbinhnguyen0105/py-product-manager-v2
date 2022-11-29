@@ -1,0 +1,68 @@
+QFrame#card {
+    border: 1px solid black;
+}
+QLabel {
+    border: None;
+    font-weight: bold;
+}
+QLineEdit {
+    padding: 5px 28px 5px 11px;
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(44, 44, 44);
+    outline: none;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+}
+
+
+QPlainTextEdit {
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(44, 44, 44);
+    outline: none;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+}
+QPushButton {
+    height: 36px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#btnOpen {
+    background-color: rgba(27, 116, 228, 1);
+    color: rgb(225, 225, 255);
+}
+
+QPushButton#btnOpen::hover {
+    background-color: rgba(27, 116, 228, 0.75);
+}
+
+QPushButton#btnEdit {
+    background-color: rgba(28, 186, 99, 1);
+    color: rgb(225, 225, 255);
+}
+QPushButton#btnEdit::hover {
+    background-color: rgba(28, 186, 99, 0.75);
+}
+
+QPushButton#btnRemove {
+    background-color: rgba(231, 76, 60, 1);
+}
+QPushButton#btnRemove::hover {
+    background-color: rgba(231, 76, 60, 0.75);
+}
+
+QPushButton#btnOpenImageFolder {
+    background-color: rgba(0, 0, 0, 1);
+}
+QPushButton#btnOpenImageFolder::hover {
+    background-color:  rgba(0, 0, 0, 0.75);
+}
