@@ -35,10 +35,7 @@ class ListProduct(QFrame):
         super().__init__(parent)
         self.centralLayout = QVBoxLayout()
         self._handleLoadData()
-        self.searchField = SearchField()
-        self.searchField.setFixedWidth(int(self.parent().width() * 0.8))
-        self.table = Table()
-
+        
         self.model = QStandardItemModel()
         self.model.setColumnCount(len(HEADER))
         self.model.setHorizontalHeaderLabels(HEADER)
@@ -74,10 +71,10 @@ class ListProduct(QFrame):
             self.centralLayout.removeWidget(self.loadingScreen)
             self.loadingScreen.deleteLater()
             self.loadingScreen = None
-
+            self.table = Table(self)
+            self.searchField = SearchField(self)
             self.centralLayout.addWidget(self.searchField)
             self.centralLayout.addWidget(self.table)
-# headers = ['ID', 'Category', 'Ward', 'Street name', 'Acreage',  'Price', 'Legal', 'Building line']
 
     def _reportProgress(self, e):
         _id = QStandardItem(str(e['ID']))
@@ -109,8 +106,6 @@ class ListProduct(QFrame):
         self.searchField.searchFieldStreetName.textChanged.connect(lambda text, col=3: self.filterProxyModel.setFilterByColumn(text, col))
         self.searchField.searchFieldAcreage.textChanged.connect(lambda text, col=4: self.filterProxyModel.setFilterByColumn(text, col))
         self.searchField.searchFieldPrice.textChanged.connect(lambda text, col=5: self.filterProxyModel.setFilterByColumn(text, col))
-        self.searchField.searchFieldLegal.textChanged.connect(lambda text, col=6: self.filterProxyModel.setFilterByColumn(text, col))
-        self.searchField.searchFieldBuildingLine.textChanged.connect(lambda text, col=7: self.filterProxyModel.setFilterByColumn(text, col))
 
         self.table.setModel(self.filterProxyModel)
          
@@ -168,33 +163,26 @@ class LoadData(QObject):
 class SearchField(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
-        # self.setFixedWidth(900)
-
+        _width = self.parent().width()
         self.centralLayout = QHBoxLayout()
         self.searchFieldId = QLineEdit()
-        self.searchFieldId.setFixedWidth(100)
+        self.searchFieldId.setFixedWidth(int(_width/6))
         self.searchFieldId.setPlaceholderText('ID')
         self.searchFieldCategory = QLineEdit()
-        self.searchFieldCategory.setFixedWidth(100)
+        self.searchFieldCategory.setFixedWidth(int(_width/6))
         self.searchFieldCategory.setPlaceholderText('Category')
         self.searchFieldWard = QLineEdit()
-        self.searchFieldWard.setFixedWidth(100)
+        self.searchFieldWard.setFixedWidth(int(_width/6))
         self.searchFieldWard.setPlaceholderText('Ward')
         self.searchFieldStreetName = QLineEdit()
-        self.searchFieldStreetName.setFixedWidth(100)
+        self.searchFieldStreetName.setFixedWidth(int(_width/6))
         self.searchFieldStreetName.setPlaceholderText('Street name')
         self.searchFieldAcreage = QLineEdit()
-        self.searchFieldAcreage.setFixedWidth(100)
+        self.searchFieldAcreage.setFixedWidth(int(_width/6))
         self.searchFieldAcreage.setPlaceholderText('Acreage')
         self.searchFieldPrice = QLineEdit()
-        self.searchFieldPrice.setFixedWidth(100)
+        self.searchFieldPrice.setFixedWidth(int(_width/6))
         self.searchFieldPrice.setPlaceholderText('Price')
-        self.searchFieldLegal = QLineEdit()
-        self.searchFieldLegal.setFixedWidth(100)
-        self.searchFieldLegal.setPlaceholderText('Legal')
-        self.searchFieldBuildingLine = QLineEdit()
-        self.searchFieldBuildingLine.setFixedWidth(100)
-        self.searchFieldBuildingLine.setPlaceholderText('Building Line')
 
         self.centralLayout.addWidget(self.searchFieldId)
         self.centralLayout.addWidget(self.searchFieldCategory)
@@ -202,8 +190,6 @@ class SearchField(QWidget):
         self.centralLayout.addWidget(self.searchFieldStreetName)
         self.centralLayout.addWidget(self.searchFieldAcreage)
         self.centralLayout.addWidget(self.searchFieldPrice)
-        self.centralLayout.addWidget(self.searchFieldLegal)
-        self.centralLayout.addWidget(self.searchFieldBuildingLine)
         self.setLayout(self.centralLayout)
 
 class SortFilterProxyModel(QSortFilterProxyModel):

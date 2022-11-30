@@ -91,7 +91,7 @@ class Bot(QObject):
         self.urlCheckpoint = 'https://www.facebook.com/checkpoint/'
         self.urlGroup = f'https://facebook.com/groups/2427280817529774'
 
-        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + '\\' + f'profile_{username}'
+        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + os.sep + f'profile_{username}'
         pathChromeDrive = _getExactlyPath(PATH_CHROMEDRIVER)
         options = Options()
         options.add_experimental_option('debuggerAddress', 'localhost:9223')

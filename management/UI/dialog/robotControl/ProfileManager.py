@@ -2,6 +2,7 @@ import os
 import json
 import sys
 import shutil
+import subprocess
 from PyQt6.QtWidgets import (
     QDialog,
     QVBoxLayout,
@@ -141,28 +142,32 @@ class ProfileManager(QDialog):
                     'items': _items
                 }
             self.__writeProfie(jsonObject)
+            self.login.driver.close()
+            self.login.driver.quit()
+            subprocess.Popen("osascript -e 'quit app \"Google chrome\"'", shell=True)
 
         username = self.profileTable.item(row, 0).text()
         password = self.profileTable.item(row, 1).text()
         print('Username: ', username)
-        self.loginThread = QThread()
+        self.loginThread = QThread(self)
         self.login = Login({'username': username, 'password': password})
         self.login.moveToThread(self.loginThread)
 
         self.loginThread.started.connect(self.login.run)
-        self.loginThread.finished.connect(self.loginThread.deleteLater)
 
         self.login.progress_msg.connect(reportProgress)
         self.login.finished.connect(reportFinished)
+        self.login.finished.connect(self.login.deleteLater)
         self.login.finished.connect(self.loginThread.quit)
         self.login.finished.connect(self.loginThread.deleteLater)
-        self.login.finished.connect(self.login.deleteLater)
+        self.loginThread.finished.connect(self.loginThread.deleteLater)
 
         self.loginThread.start()
 
     def __onBtnDeleteClick(self, row):
-        username = self.profileTable.item(row, 0).text()
-        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + '\\' + f'profile_{username}'
+        username = self.profileTable.item(row + 1, 0).text()
+        
+        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + os.sep + f'profile_{username}'
         profigleConfig = self.__loadProfile()
         del profigleConfig[username]
         self.__writeProfie(profigleConfig)

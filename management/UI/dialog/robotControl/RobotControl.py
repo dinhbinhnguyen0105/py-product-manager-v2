@@ -35,8 +35,6 @@ class RobotControl(QDialog):
         self.buttonBox = ButtonBoxDialog(self)
         self.buttonBox.btnRun.clicked.connect(lambda : self.__btnRunOnClick())
 
-
-
         self.layout.addWidget(self.control)
         self.layout.addWidget(self.buttonBox)
         self.setLayout(self.layout)

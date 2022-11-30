@@ -144,14 +144,14 @@ def _initItem(idProduct = str):
     description = description.replace(r'{contact}', contact)
     description = header + '\n' + description
 
-    imageFolder = d_imageFolder + '\\images_for_sell'
+    imageFolder = d_imageFolder + '/images_for_sell'
     if os.path.exists(imageFolder):
         images = os.listdir(imageFolder)
         imagesTemp = []
         imagesTemp2 = []
         
         for image in images:
-            imagesTemp.append(imageFolder + '\\' + image)
+            imagesTemp.append(imageFolder + '/' + image)
 
         if len(imagesTemp) >= 6:
             while len(imagesTemp2) < 6:

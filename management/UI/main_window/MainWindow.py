@@ -10,15 +10,18 @@ from .central.Central import Central
 from ..dialog.create.Create import Create
 from ..dialog.productTemplate.ProductTemplate import ProductTemplate
 from ..dialog.robotControl import RobotControl
-
-SIZE_WIDTH = 1400
-SIZE_HEIGHT = int(SIZE_WIDTH/1.618) + 100
+from ...CONSTANTS import (
+    WIDTH_MAIN,
+    HEIGHT_MAIN,
+    WIDTH_SIZEBAR,
+    HEIGHT_SIZEBAR,
+)
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle('Product management')
-        self.setFixedSize(SIZE_WIDTH, SIZE_HEIGHT)
+        self.setFixedSize(WIDTH_MAIN, HEIGHT_MAIN)
 
         self.centralWidget = QWidget()
         self.centralLayout = QHBoxLayout()
@@ -29,6 +32,8 @@ class MainWindow(QMainWindow):
         self.productTemplateDialog = ProductTemplate()
         self.robotControlDialog = RobotControl()
 
+        self.sidebar.setFixedWidth(WIDTH_SIZEBAR)
+        self.central.setFixedWidth(WIDTH_MAIN-WIDTH_SIZEBAR)
         self.centralLayout.addWidget(self.sidebar)
         self.centralLayout.addWidget(self.central)
         self.centralWidget.setLayout(self.centralLayout)

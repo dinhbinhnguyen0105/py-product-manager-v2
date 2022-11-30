@@ -32,14 +32,14 @@ class ImageCard(QWidget):
         label = QLabel()
         label.setObjectName('imagecard')
         pixmap = QPixmap(url)
-        pixmap = pixmap.scaled(120, 120)
+        pixmap = pixmap.scaled(100, 100)
         label.setPixmap(pixmap)
         layout.addWidget(label)
         self.setLayout(layout)
         self._setStyle()
     
     def _setStyle(self):
-        self.setFixedSize(120, 120)
+        self.setFixedSize(100, 100)
 
 class ImageList(QWidget):
     def __init__(self, urls, parent = None):
@@ -111,7 +111,7 @@ class DefaultInfo(QFrame):
 class ButtonBox(QWidget):
     def __init__(self, payload, parent=None):
         super().__init__(parent)
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
         self.payload = payload
 
         self.btnInit = QPushButton('Init')
@@ -156,15 +156,15 @@ class ButtonBox(QWidget):
 class DetailProduct(QFrame):
     def __init__(self, payload, parent=None):
         super().__init__(parent)
-        width = self.parent().width()
+        _height = self.parent().height()
 
-        self.centralLayout = QHBoxLayout()
+        self.centralLayout = QVBoxLayout()
         self.imageList = ImageList(payload['Image path'], self)
-        self.imageList.setFixedWidth(int(width * 0.4))
+        self.imageList.setFixedHeight(int(_height* 0.4))
         self.info = DefaultInfo(payload)
-        self.info.setFixedWidth(int(width * 0.4))
+        self.info.setFixedHeight(int(_height* 0.4))
         self.buttonBox = ButtonBox(payload)
-        self.buttonBox.setFixedWidth(int(width * 0.2))
+        self.buttonBox.setFixedHeight(int(_height* 0.2))
 
         self.centralLayout.addWidget(self.imageList)
         self.centralLayout.addWidget(self.info)

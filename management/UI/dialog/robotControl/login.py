@@ -24,6 +24,8 @@ class Login(QObject):
     
     def run(self):
         result = self.__mainControl()
+        # self.driver.close()
+        # self.driver.quit()
         self.finished.emit(result)
     
     def __mainControl(self):
@@ -32,27 +34,27 @@ class Login(QObject):
             if loginStatus == 'logged':
                 profileName = self.__handleGetName()
                 if profileName == 'error':
-                    self.driver.close()
-                    self.driver.quit()
+                    # self.driver.close()
+                    # self.driver.quit()
                     return {'status': profileName, 'name': ''}
                 else:
-                    self.driver.close()
-                    self.driver.quit()
+                    # self.driver.close()
+                    # self.driver.quit()
                     return {'status': 'logged', 'name': profileName}
             else:
-                self.driver.close()
-                self.driver.quit()
+                # self.driver.close()
+                # self.driver.quit()
                 return {'status': loginStatus, 'name': ''}
         else:
-            self.driver.close()
-            self.driver.quit()
+            # self.driver.close()
+            # self.driver.quit()
             return {'status': 'error', 'name': ''}
 
     def __initDriver(self):
         self.urlLogin = 'https://www.facebook.com/login'
         self.urlCheckpoint = 'https://www.facebook.com/checkpoint/'
         self.urlProfile = 'https://www.facebook.com/profile.php'
-        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + '\\' + f'profile_{self.username}'
+        pathProfile = _getExactlyPath(PATH_PROFILES_BROWSER) + os.sep + f'profile_{self.username}'
         pathChromeDrive = _getExactlyPath(PATH_CHROMEDRIVER)
         options = Options()
         options.add_experimental_option('debuggerAddress', 'localhost:9223')

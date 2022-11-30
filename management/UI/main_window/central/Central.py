@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import (
-    QVBoxLayout,
+    QHBoxLayout,
     QWidget,
 )
 from .ListProduct import ListProduct
@@ -8,16 +8,16 @@ from .DetailProduct import DetailProduct
 class Central(QWidget):
     def __init__(self, parent = None):
         super().__init__(parent)
-        self.setFixedSize(int(self.parent().width()*0.8), self.parent().height())
-        self.centralLayout = QVBoxLayout()
+        self.centralLayout = QHBoxLayout()
         self.listProduct = ListProduct(self)
-        self.listProduct.setFixedSize(int(self.parent().width()), int(self.parent().height()*0.5))
 
         self.detailProduct = QWidget()     
-
+        self.detailProduct.setFixedSize(int(self.parent().width()*0.3), self.parent().height())
         self.listProduct.currentProductChanged.connect(self.displayCurrentProduct)
 
         self.centralLayout.addWidget(self.listProduct)
+        self.centralLayout.addWidget(self.detailProduct)
+
         self.setLayout(self.centralLayout)
 
     def displayCurrentProduct(self, e):

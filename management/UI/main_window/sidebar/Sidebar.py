@@ -10,14 +10,12 @@ from ....CONSTANTS import (
     PATH_ICON_PLUS,
     PATH_ICON_BOOKMARK,
     PATH_ICON_ROBOTCONTROL,
-    PATH_MAIN_STYLE
 )
 from ....helper import _getExactlyPath
 
 class SideBar(QFrame):
     def __init__(self, parent=QMainWindow):
         super().__init__(parent)
-        self.setFixedSize(int(self.parent().width() * 0.2), self.parent().height())
         self.layout = QVBoxLayout()
 
         pathIconPlus = _getExactlyPath(PATH_ICON_PLUS)
@@ -46,14 +44,16 @@ class SideBar(QFrame):
         self.setStyleSheet('''
             QPushButton {
                 height: 36px;
-                margin: 12px;
-                padding-left: 50px;
+                padding-left: 25px;
                 border: None;
                 border-radius: 6px;
                 font-weight: bold;
                 background-color: rgb(231, 243, 255);
                 color: rgb(24, 119, 242);
                 text-align: left;
+            }
+            QPushButton#btnCreateNewListing{
+                margin-top: 36px;
             }
             QPushButton::hover {
                 background-color: rgb(211, 222, 232);
